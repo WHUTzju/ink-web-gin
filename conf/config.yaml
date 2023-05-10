@@ -1,0 +1,33 @@
+
+
+db:
+#  user:password@tcp(host)/dbName?charset=utf8&parseTime=True&loc=Local"
+  uri: 'root:123456@tcp(127.0.0.1:3306)/gin_web?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=True&loc=Local&timeout=10000ms'
+  table_prefix: huac_
+
+Server:
+  RunMode: debug
+  HttpPort: :8000
+  ReadTimeout: 60
+  WriteTimeout: 60
+
+logs:
+  # logger category(zap/logrus, default logrus)
+  category: logrus
+  # logger level(4:Info 5:Debug, 0<=level<=6, refer to go-helper log.level)
+  level: 4
+  # normal text or json str
+  json: false
+  line-num:
+    # disable line num
+    disable: false
+    # line num level(package path level)
+    level: 1
+    # keep logger source dir
+    source: false
+    # keep logger version
+    version: true
+  # operation log context key
+  operation-key: operation_log_response
+  # allow users to delete operation logs
+  operation-allowed-to-delete: false
